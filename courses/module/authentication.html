@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>A course module on authentication in distributed systems</title>
+</head>
+
+<body>
+<table>
+<tr><td valign=top>
+<font size="+3"><strong>A Course Module on Authentication in Distributed Systems</strong></font>
+<br><font size="+1"><strong><a href="http://www.cs.unc.edu/~reiter">Michael Reiter</a></strong>
+    <br><strong>UNC Chapel Hill</strong></font>
+</td>
+<td valign=top><img src="./intel-sponsor.jpg" height=100></td></tr>
+</table>
+
+<p>Below is a course module on authentication in distributed systems,
+based on material that I have refined over a few course offerings.
+The module is based on the treatment of the subject in</p>
+<ul>
+<li>B. Lampson, M. Abadi, M. Burrows and E. Wobber.  <a
+href="http://dx.doi.org/10.1145/138873.138874">Authentication in
+distributed systems: Theory and practice</a>.  <i>ACM Transactions on
+Computer Systems</i> 10(4), November 1992.</li>
+</ul>
+
+<p>This paper has highly influenced the course module and is, in my
+view, mandatory reading for anyone who is going to study access
+control in distributed systems.  That said, the course module adapts
+and extends the treatment in the above paper in a few ways.</p>
+<ul>
+<li>The "theory" developed in this paper for explaining authentication
+is what is today sometimes called an authentication (or authorization)
+<i>logic</i>.  Very simply, by an "authorization logic" I mean a
+definition of formulas and inference rules to derive new formulas from
+previous ones, where the formulas describe principals and their
+delegations of authority from one to another.  The logic presented in
+the paper is pretty complex for undergraduate students, and so the
+module tries to simplify the logic part quite a bit (e.g., omitting
+quantifiers, simplifying notation, and, in places, frankly just
+playing it fast and loose).  The resulting module definitely cuts
+corners on the logic part but hopefully is more accessible because of
+it.</li>
+
+<li>The paper, owing to when it was written, contains a somewhat dated
+discussion of cryptographic primitives, both in terms of things like
+key sizes and performance and, more fundamentally, in the terminology
+it uses.  For example, sometimes it uses "encryption" to describe
+techniques that have nothing to do with protecting confidentiality (a
+pet peeve of mine).  For this reason, I've tried to use more modernly
+accepted terminology in the cryptologic community, for example.</li>
+
+<li>The module uses more modern examples for illustration purposes.
+Specifically, the module explains the basics of trusted platforms
+(&agrave; la TCG), website authentication in support of SSL/TLS, and
+DNSSEC.  (More precisely, the module covers these technologies at a
+level of abstraction that can be described in the logic; many details
+of these technologies are outside the scope of what the logic
+captures.)  My hope is to eventually update the module to cover
+BGPSEC, as well.</li>
+</ul>
+
+<p>The course module is targeted at upper-level undergraduates in a
+computer science program, and typically consumes about four to five
+hours of class time.  The module does <i>not</i> presume that the
+students have a background in cryptography, and I tend to cover this
+material in my own classes before any discussion of cryptography.  It
+also does not assume previous familiarity with any details of trusted
+platforms, SSL/TLS or DNS/DNSSEC.  For what it's worth, several
+students have expressed to me the usefulness of the way of thinking
+about authentication and access-control advocated in this module,
+though this feedback typically comes from students after they have
+left the classroom and had to face complicated distributed systems
+security problems in their jobs.</p>
+<ul>
+<li><a href="./Authentication-v0.1.pptx">Powerpoint with speaker notes</a>
+(4.4MB)</li>
+<li>To obtain example quiz/homework problems and solutions, please
+email me your request and a URL on your department's web site showing
+me that you are faculty.</li>
+</ul>
+<p>You are free to modify the module to suit your needs, and I'd be
+grateful to receive any improvements, adaptations or extensions of
+these materials in return.</p>
+
+<h4>Additional reading</h4>
+<p>Authorization logics have proven to be quite useful for reasoning
+about authentication and access-control in distributed systems and,
+more recently, for <i>implementing</i> authentication and
+access-control in such systems using automated proof verification
+techniques.  To my knowledge, the first paper to advocate for using
+such logics to enforce access-control policy in distributed systems
+was</p>
+<ul>
+<li>A. W. Appel and E. W. Felten.  
+<a href="http://dx.doi.org/10.1145/319709.319718">Proof-carrying
+authentication</a>.  In <i>Proceedings of the 6th ACM Conference on
+Computer and Communications Security</i>, November 1999.</li>
+</ul>
+
+<p>Some examples of research projects in which I've been involved that
+implement authentication in this way are described in the following
+readings:</p>
+<ul>
+
+<li>L. Bauer, S. Garriss and M. K. Reiter.  <a
+href="http://www.cs.unc.edu/~reiter/papers/2005/SP2.pdf">Distributed
+proving in access-control systems</a>.  In <i>Proceedings of the 2005
+IEEE Symposium on Security and Privacy</i>, pages 81&ndash;95, May
+2005.</li>
+
+<li>L. Bauer, S. Garriss, J. M. McCune, M. K. Reiter, J. Rouse and
+P. Rutenbar.  <a
+href="http://www.cs.unc.edu/~reiter/papers/2005/ISC.pdf">Device-enabled
+authorization in the Grey system</a>.  In <i>Information Security: 8th
+International Conference, ISC 2005</i> (Lecture Notes in Computer
+Science 3650), pages 431&ndash;445, 2005.</li>
+
+<li>L. Bauer, S. Garriss and M. K. Reiter.  <a
+href="http://www.cs.unc.edu/~reiter/papers/2007/ESORICS.pdf">Efficient
+proving for practical distributed access-control systems</a>.
+<i>Computer Security &mdash; ESORICS 2007: 12th European Symposium on
+Research in Computer Security</i> (Lecture Notes in Computer Science
+4734), pages 19&ndash;37, September 2007.</li>
+
+<li>M. L. Mazurek, Y. Liang, W. Melicher, M. Sleeper, L. Bauer,
+G. R. Ganger, N. Gupta, and M. K. Reiter.
+<a href="http://www.cs.unc.edu/~reiter/papers/2014/FAST.pdf">Toward
+strong, usable access control for shared distributed data</a>.  In
+<i>Proceedings of the 12th USENIX Conference on File and Storage
+Technologies</i>, pages 89&#8211;103, February 2014.</li>
+</ul>
+
+<p>Comments and corrections are welcomed and appreciated.  I am very
+grateful for support from Intel for producing this module.</p>
+
+</body>
+</html>
