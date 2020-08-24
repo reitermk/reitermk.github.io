@@ -10,6 +10,10 @@
 }
 
 .content {
-    max-width: 650px;
-    margin: auto;
+    min-width:650px;
+    min-height:800px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-400px 0 0 -300px;
 }
